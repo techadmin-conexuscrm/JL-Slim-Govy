@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ── Arrow-section downward triangle ───────────────────────────────────── */
+.arrow-triangle {
+  position: relative;
+}
+.arrow-triangle::after {
+  content: '';
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 32px solid transparent;
+  border-right: 32px solid transparent;
+  border-top: 24px solid #0d3252;
+  z-index: 2;
+}
+@media (max-width: 767px) {
+  .arrow-triangle::after {
+    bottom: -18px;
+    border-top-width: 18px;
+    border-left-width: 24px;
+    border-right-width: 24px;
+  }
+}
+
+/* ── Trust seal ring border ─────────────────────────────────────────────── */
+.trust-seal {
+  position: relative;
+}
+.trust-seal::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  opacity: 0.3;
+}
+
+/* ── Popular card border override ───────────────────────────────────────── */
+.card-popular {
+  border: 3px solid #c2185b;
+  box-shadow: 0 8px 30px rgba(194, 24, 91, 0.12);
+}
