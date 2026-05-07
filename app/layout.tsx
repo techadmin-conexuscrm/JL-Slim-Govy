@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { DM_Sans, Outfit } from 'next/font/google'
 import './globals.css'
+import 'react-phone-number-input/style.css'
+import { RootProvider } from './context/rootProvider'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -25,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${outfit.variable} font-dm-sans text-navy bg-white leading-relaxed`}>
-        {children}
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   )
