@@ -16,7 +16,7 @@ const TIERS: Array<{
 }> = [
   {
     qty: 1,
-    pricePerBottle: 79,
+    pricePerBottle: 69,
     badge: "basic",
     label: "BASIC",
     features: ["NATURAL FORMULA", "FAST SHIPPING"],
@@ -30,7 +30,7 @@ const TIERS: Array<{
     isPopular: true,
     bonus: "Digital Weight Loss Content",
     features: [
-      "7 FREE BONUSES\n($1549 VALUE)",
+      "7 FREE BONUSES\n($174 VALUE)",
       "FREE SHIPPING",
       "BURN FAT NATURALLY",
     ],
@@ -43,7 +43,7 @@ const TIERS: Array<{
     label: "BUNDLE",
     bonus: "Digital Weight Loss Content",
     features: [
-      "7 FREE BONUSES\n($1549 VALUE)",
+      "7 FREE BONUSES\n($87 VALUE)",
       "FREE SHIPPING",
       "BURN FAT NATURALLY",
     ],
@@ -120,9 +120,9 @@ const mockProducts: UIProduct[] = [
     plan: "1 Bottle",
     supply: "30 Day Supply",
     imageUrl: "/images/bottle-1.png",
-    price: { dollars: "$71", cents: ".10", unit: "/ bottle" },
+    price: { dollars: "$69", unit: "/ bottle" },
     features: ["NATURAL FORMULA", "FAST SHIPPING"],
-    perServing: "$2.37",
+    perServing: "$2.30",
   },
   {
     id: "sub-6",
