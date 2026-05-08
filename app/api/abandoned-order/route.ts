@@ -1,23 +1,30 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { createOrder } from '@/lib/apis/createOrder'
+import { NextRequest, NextResponse } from "next/server";
+import { createOrder } from "@/lib/apis/createOrder";
 
 export async function POST(req: NextRequest) {
-  const apiKey = process.env.API_KEY || ''
+  const apiKey = process.env.API_KEY;
   try {
-    const payload = await req.json()
+    const payload = await req.json();
     try {
-      await createOrder({ ...payload, status: 'abandoned' }, apiKey)
+      await createOrder({ ...payload, status: "abandoned" }, apiKey);
     } catch (err) {
-      const msg = typeof err === 'string' ? err : (err as Error)?.message ?? ''
-      if (msg.toLowerCase().includes('offer') || msg.toLowerCase().includes('product')) {
-        await createOrder({ ...payload, status: 'abandoned', products: [] }, apiKey)
+      const msg =
+        typeof err === "string" ? err : ((err as Error)?.message ?? "");
+      if (
+        msg.toLowerCase().includes("offer") ||
+        msg.toLowerCase().includes("product")
+      ) {
+        await createOrder(
+          { ...payload, status: "abandoned", products: [] },
+          apiKey,
+        );
       } else {
-        throw err
+        throw err;
       }
     }
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true });
   } catch (err) {
-    console.error('[abandoned-order] failed:', err)
-    return NextResponse.json({ success: false }, { status: 500 })
+    console.error("[abandoned-order] failed:", err);
+    return NextResponse.json({ success: false }, { status: 500 });
   }
 }
