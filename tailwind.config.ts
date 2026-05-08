@@ -22,8 +22,9 @@ const config: Config = {
         'timer-red': '#d32929',
       },
       fontFamily: {
-        outfit: ['var(--font-outfit)', 'sans-serif'],
-        'dm-sans': ['var(--font-dm-sans)', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        outfit: ['var(--font-montserrat)', 'sans-serif'],
+        'dm-sans': ['var(--font-montserrat)', 'sans-serif'],
       },
       maxWidth: {
         page: '1140px',
